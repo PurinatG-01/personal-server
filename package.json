@@ -1,0 +1,24 @@
+{
+  "name": "express-1",
+  "version": "1.0.0",
+  "description": "personal-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node ./src/index.js",
+    "start": "node ./src/index.js",
+    "docker:start": "yarn docker:remove; yarn docker:build; yarn docker:run",
+    "docker:build": "docker build -t chofongsua/personal-server .",
+    "docker:remove": "docker image rm chofongsua/personal-server",
+    "docker:run": "docker run -p 5001:8080 chofongsua/personal-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
